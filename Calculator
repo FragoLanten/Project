@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="sum" type="text" value="0"><br>
+    <input id="plus" type="button" value="+">
+    <input id="minus" type="button" value="-">
+    <input id="ravno" type="button" value="=">
+    
+    <script>
+       let summary1 = 0;
+       let summary2 = 0;
+       
+       let text = document.querySelector('#sum');
+       
+       let ravno = document.querySelector('#ravno');
+       
+
+       let plus = document.querySelector('#plus');
+       plus.addEventListener('click', funcplus);
+
+       let minus = document.querySelector('#minus');
+       minus.addEventListener('click', funcminus)
+                
+       function funcplus () {
+           summary1 = text.value;
+           ravno.addEventListener('click', funcravnoplus);
+       }
+
+       function funcminus () {
+           summary1 = text.value;
+           ravno.addEventListener('click', funcravnominus);
+       }
+     
+       function funcravnoplus () {
+           summary2 = text.value; 
+           text.value = Number(summary1) + Number(summary2);
+       } 
+
+       function funcravnominus () {
+            summary2 = text.value; 
+            text.value = Number(summary1) - Number(summary2);
+       }
+
+    </script>
+</body>
+</html>
